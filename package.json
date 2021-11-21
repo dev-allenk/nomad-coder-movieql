@@ -1,0 +1,20 @@
+{
+  "name": "nomad-coder-movieql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/dev-allenk/nomad-coder-movieql.git",
+  "author": "Heungsoo, Kim <heungsoo.kim@qualson.com>",
+  "license": "MIT",
+  "dependencies": {
+    "graphql-yoga": "^1.18.3"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.4"
+  }
+}
