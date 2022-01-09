@@ -1,12 +1,9 @@
-const allenk = {
-  name: "allenk",
-  age: 33,
-  gender: "male",
-}
+import * as db from "./db"
 
 const resolvers = {
   Query: {
-    person: () => allenk,
+    people: () => db.people,
+    person: (_, { id }) => db.getById(id),
   },
 }
 
