@@ -2,8 +2,11 @@ import * as db from "./db"
 
 const resolvers = {
   Query: {
-    people: () => db.people,
-    person: (_, { id }) => db.getById(id),
+    movies: () => db.getMovies(),
+    movie: (_, { id }) => db.getById(id),
+  },
+  Mutation: {
+    addMovie: (_, { name, score }) => db.addMovie(name, score),
   },
 }
 
