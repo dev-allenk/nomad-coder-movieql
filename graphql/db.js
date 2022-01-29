@@ -30,6 +30,7 @@ export const getById = (id) => {
 export const deleteById = (id) => {
   const newMovies = movies.filter((movie) => movie.id !== id)
   movies = newMovies
+  return movies
 }
 
 export const addMovie = (name, score) => {
