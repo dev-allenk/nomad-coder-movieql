@@ -6,6 +6,7 @@
   "author": "Heungsoo, Kim <heungsoo.kim@qualson.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.25.0",
     "graphql-yoga": "^1.18.3"
   },
   "scripts": {
