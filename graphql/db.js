@@ -1,44 +1,10 @@
-let movies = [
-  {
-    id: 0,
-    name: "Star Wars",
-    score: 10,
-  },
-  {
-    id: 1,
-    name: "Avengers",
-    score: 99,
-  },
-  {
-    id: 2,
-    name: "The Godfather",
-    score: 67,
-  },
-  {
-    id: 3,
-    name: "Logan",
-    score: 77,
-  },
-]
-export const getMovies = () => movies
+import axios from "axios"
+import qs from "query-string"
 
-export const getById = (id) => {
-  const movie = movies.find((movie) => movie.id === id)
-  return movie
-}
+const API_URL = "https://yts.mx/api/v2/list_movies.json"
 
-export const deleteById = (id) => {
-  const newMovies = movies.filter((movie) => movie.id !== id)
-  movies = newMovies
-  return movies
-}
+export const getMovies = (limit, rating) => {
+  const query = qs.stringify({ limit, minimum_rating: rating })
 
-export const addMovie = (name, score) => {
-  const newMovie = {
-    id: movies.length + 1,
-    name,
-    score,
-  }
-  movies.push(newMovie)
-  return newMovie
+  return axios.get(`${API_URL}?${query}`).then((res) => res.data.data.movies)
 }
