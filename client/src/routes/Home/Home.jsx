@@ -1,6 +1,7 @@
 import React from "react"
 import { gql, useQuery } from "@apollo/client"
 import * as S from "./style"
+import Movies from "../../components/Movies"
 
 const GET_MOVIES = gql`
   {
@@ -17,7 +18,7 @@ export default function Home() {
   return (
     <S.Container>
       {loading && <div>loading...</div>}
-      {data && data.movies.map((movie) => <div key={movie.id}>{movie.id}</div>)}
+      {data && <Movies movies={data.movies} />}
     </S.Container>
   )
 }
